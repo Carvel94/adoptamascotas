@@ -17,7 +17,7 @@ gem 'simple_form'
 #la siguiente gema permite manejar varios archivos seeds
 gem 'seedbank'
 gem 'bootstrap-sass', '~> 3.3.4'
-gem 'font-awesome-sass', '~> 4.3.0'
+gem 'font-awesome-rails'
 gem 'rails_layout', '~> 1.0', '>= 1.0.29'
 
 gem 'will_paginate'

@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Adoptamascotas</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Adoptamascotas" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Adoptamascotas" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
+  <body>
+    <header>
+      <%= render 'shared/header.html.erb' %>
+    </header>
 
-</body>
+    <main>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <%= render 'shared/footer.html.erb' %>
+    </footer>
+  </body>
 </html>

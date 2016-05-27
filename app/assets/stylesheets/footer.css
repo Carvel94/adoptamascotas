@@ -1,0 +1,43 @@
+footer .contenedor {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: center;
+	padding-bottom: 25px;
+}
+
+.copy {
+	font-size: 20px;
+	color:#545454;
+}
+
+.sociales {
+	width: 100%;
+	text-align: center;
+	font-size: 28px;
+}
+
+.sociales a{
+	color:#333;
+	text-decoration: none;
+
+}
+
+/*esto permitirá que a partir de 1024px, todos los contenedores
+en todas las secciones esten alineados a 1000px de ancho*/
+
+@media (min-width:1024px){
+	.contenedor {
+		width:1000px;
+	}
+}
+
+@media (min-width:768px){
+	.sociales{
+		width:auto;
+	}
+
+/*a partir de tamaño table el footer coloca el contenido en los extremos*/
+	footer .contenedor{
+		justify-content: space-between;
+	}
+}
