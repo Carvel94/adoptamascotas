@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
+  
+  include CodigosGenerales
+  before_action :cargarOpcionesDelMenuServicios
+
   def home
-  	@tipo_servicios = TipoServicio.all
   end
 
   def index

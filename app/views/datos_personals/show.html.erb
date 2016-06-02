@@ -1,0 +1,85 @@
+  <br />
+  
+  <div id="page-wrapper">
+    <div class="container-fluid">
+      <!-- Page Heading -->
+      <div class="row">
+        <div class="col-lg-12">
+          <% flash.each do |key, value| %>
+          <div class="alert alert-success fade in">
+            <a class="close" data-dismiss="alert" href="#">&times;</a>
+            <strong><%=value%></strong>
+          </div>
+          <% end %>
+        </div>
+      </div><!-- /.row -->
+
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-5">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"></h3>
+              <div style="text-align: center">
+                <h3 class="panel-title">Datos personales</h3>
+              </div>
+            </div>
+            <div class="panel-body">
+              <ul class="list-group">
+                <li class="list-group-item"><strong>Nombre:</strong>
+                  <%=@datos_personal.nombre%>
+                </li>
+                <li class="list-group-item"><strong>Apellido:</strong>
+                  <%=@datos_personal.apellido%>
+                </li>
+                <li class="list-group-item"><strong>Fecha nacimiento:</strong>
+                  <%=humanizar_fecha_corta @datos_personal.fecha_nacimiento%>
+                </li>
+                <% puts @datos_personal.sexo%>
+                <li class="list-group-item"><strong>Sexo:</strong>
+                  <%= humanizar_sexo @datos_personal.sexo%>
+                </li>
+                <li class="list-group-item"><strong>Teléfono:</strong>
+                  <%=@datos_personal.telefono%>
+                </li>
+                <li class="list-group-item"><strong>Celular:</strong>
+                  <%=@datos_personal.celular%>
+                </li>
+                <li class="list-group-item"><strong>Estado:</strong>
+                  <%=@datos_personal.estado%>
+                </li>
+                <li class="list-group-item"><strong>Ciudad:</strong>
+                  <%=@datos_personal.ciudad%>
+                </li>
+                <li class="list-group-item"><strong>Dirección:</strong>
+                  <%=@datos_personal.direccion%>
+                </li>
+                <li class="list-group-item"><strong>Correo alternativo:</strong>
+                  <%=@datos_personal.correo_alternativo%>
+                </li>
+                <li class="list-group-item"><strong>Calificación:</strong>
+                  <%=@datos_personal.calificacion%>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3"></div>  
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+       <div class="col-lg-3"></div>
+       <div class="col-lg-6">
+        <div align="center">
+         <%= link_to 'Modificar', edit_datos_personal_path(@datos_personal) %> |
+         <%= link_to 'Regresar', datos_personals_path %>
+
+       </div>
+       <div>
+        <div class="col-lg-3"></div>
+      </div><!-- /.row -->
+
+    </div><!-- /.container-fluid -->
+    </div><!-- /#page-wrapper -->

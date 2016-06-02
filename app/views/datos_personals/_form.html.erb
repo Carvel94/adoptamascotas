@@ -1,0 +1,85 @@
+  <br />
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+
+      <div class="panel panel-primary"> 
+        <div class=panel-heading> <h3 class=panel-title>Agregar datos personales</h3> </div>
+        <div class=panel-body> 
+          
+          <%= simple_form_for @datos_personal, html: { class: 'form-horizontal' },
+          wrapper: :horizontal_form do |f| %>
+
+          <%= f.error_notification %>
+
+          <% if @datos_personal.errors.any? %>
+
+          <div class="alert alert-danger">
+           <div class="error_explanation">
+            <ul>
+             <% @datos_personal.errors.each do |attr,msg| %>
+             <li><%= "#{msg}" if @datos_personal.errors[attr].first == msg %> </li>
+             <% end %>
+           </ul>
+         </div>
+       </div>
+       <% end %>
+
+
+       <div class="form-group">
+        <div class="col-lg-8">
+         <%= f.input :nombre, label: 'Nombre', placeholder: "Nombre completo" %>
+       </div>
+       <div class="col-lg-8">
+         <%= f.input :apellido, label: 'Apellido', placeholder: "Apellido completo" %>
+       </div>
+       <div class="col-lg-10">
+         <%= f.input :fecha_nacimiento, label: 'Fecha de nacimiento' %>
+       </div>
+       <div class="col-lg-8">
+         <%= f.label :sexo %>
+         <%=f.collection_radio_buttons :sexo, [[true, 'Masculino'] ,[false, 'Femenino']], :first, :last %>
+       </div>
+
+       <div class="col-lg-8">
+         <%= f.input :telefono, label: 'Telefono local', placeholder: "Coloque un teléfono local" %>
+       </div>
+       <div class="col-lg-8">
+         <%= f.input :celular, label: 'Celular', placeholder: "Coloque su teléfono celular" %>
+       </div>
+       <div class="col-lg-8">
+         <%= f.input :estado, label: 'Estado', placeholder: "Coloque el estado donde vive" %>
+         <%#= f.input :estado, :collection => @datos_personal.estados_venezolanos %>
+
+       </div>
+       <div class="col-lg-8">
+         <%= f.input :ciudad, label: 'Ciudad', placeholder: "Coloque la ciudad donde vive" %>
+       </div>
+       <div class="col-lg-8">
+         <%= f.input :direccion, as: :text, label: 'Dirección de habitación', placeholder: "Coloque la dirección donde vive" %>
+       </div>
+       <div class="col-lg-8">
+         <%= f.input :correo_alternativo, label: 'Correo alternativo', placeholder: "Correo alternativo" %>
+       </div>
+
+       <div class="col-lg-8">
+        <%=f.input :calificacion, collection: 18..60, prompt: "Select your age", selected: 21%>
+      </div>
+
+      <%#= f.input :estados, collection: DatosPersonal::ESTADOS %>
+      
+    </div>
+    
+    <div class="form-group">
+      <div class="col-lg-offset-2 col-lg-10">
+        <%= f.button :submit, "Agregar", :class=> "btn btn-primary" %>
+      </div>
+    </div>
+    <%end%>
+
+  </div> 
+</div> 
+
+</div>
+<div class="col-lg-3"></div>
+</div>
