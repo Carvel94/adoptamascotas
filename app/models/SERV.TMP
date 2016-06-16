@@ -1,7 +1,7 @@
 class Servicio < ActiveRecord::Base
   belongs_to :tipo_servicio, -> {order('nombre DESC')}
 
-validates :nombre, :presence => {:message => "Debe colocar el nombre del servicio"}
+  validates :nombre, :presence => {:message => "Debe colocar el nombre del servicio"}
 validates :direccion, :presence => {:message => "Debe colocar la dirección"}
 validates :ciudad, :presence => {:message => "Debe colocar la ciudad donde se encuentra"}
 validates :estado, :presence => {:message => "Debe colocar el estado donde se encuentra"}

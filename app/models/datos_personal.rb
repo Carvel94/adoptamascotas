@@ -56,4 +56,38 @@ def estados_venezolanos
 		'Zulia'
 	]
 end
+
+#al colocar self hace que el método sea un método de clase por lo que no necesito instanciar entre otras cosas
+def self.estados_ciudades_venezolanos_hash
+    {
+    'Amazonas' => {},
+    'Anzoategui' => {},
+    'Apure' => {capital: "San Fernando de Apure", municipios: ['Achaguas', 'Biruaca', 'Muñoz', 'Páez', 'Pedro Camejo', 'Rómulo Gallegos', 'San Fernando'] },
+    'Aragua' => {capital: "Maracay", municipios: ['Bolívar', 'Camatagua', 'Francisco Linares Alcántara', 'Girardot', 'José Ángel Lamas', 'José Félix Ribas', 'José Rafael Revenga', 'Libertador', 'Mario Briceño Iragorry', 'Ocumare de la Costa de Oro', 'San Casimiro', 'San Sebastián', 'Santiago Mariño', 'Santos Michelena', 'Sucre, Tovar', 'Urdaneta', 'Zamora'] },
+    'Barinas' => {},
+    'Bolívar' => {},
+    'Carabobo' => {},
+    'Cojedes' => {},
+    'Guarico' => {},
+    'Delta Amacuro' => {},
+    'Dependencia Federal' => {},
+    'Distrito Capital' =>{capital: "Caracas", municipios: ['Libertador', 'Baruta', 'Chacao', 'Sucre', 'Hatillo']},
+    'Falcon' => {},
+    'Lara' => {},
+    'Maragarita' => {},
+    'Merida' => {},
+    'Miranda' => {},
+    'Monagas' => {},
+    'Nueva Esparta' => {capital: "La Asunción", municipios: ['Antolín del Campo', 'Arismendi', 'Díaz', 'García', 'Gómez', 'Maneiro', 'Marcano', 'Mariño', 'Península de Macanao', 'Tubores', 'Villalba']},
+    'Portuguesa' => {},
+    'Sucre' => {},
+    'Tachira' => {},
+    'Trujillo' => {},
+    'Vargas' => {},
+    'Yaracuy' => {},
+    'Zulia'=> {}
+    }
+ 
+end
+
 end

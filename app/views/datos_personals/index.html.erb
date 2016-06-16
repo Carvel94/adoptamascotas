@@ -1,2 +1,67 @@
-<h1>DatosPersonals#index</h1>
-<p>Find me in app/views/datos_personals/index.html.erb</p>
+
+
+<br/>
+<%if !@datos_personals.empty? %>
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Listado de datos personales</div>
+      <div class="table-responsive" style="height:260px" >
+        <table class="table table-striped table-hover table-bordered" >
+          <thead >
+            <tr >
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th style="text-align: center">Ver</th>
+              <th style="text-align: center">Editar</th>
+              <th style="text-align: center">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody style="overflow-y: scroll;height: auto; width:100%">
+            <% @datos_personals.each do |dato| %>
+            <tr>
+              <td><%=dato.nombre%></td>
+              <td><%=dato.apellido%></td>
+              <td></td>
+              <td>
+                <div align="center">
+                  <%=link_to edit_datos_personal_path(dato),
+                    title: 'Editar los datos personales',
+                    'data-toggle' => 'tooltip','data-placement' => 'right' do %>
+                  <span class="fa fa-fw fa-pencil"></span>
+                  <%end%>
+                </div>
+              </td>
+              <td>
+                <div align="center">
+                  <%=link_to  datos_personal_path(dato), method: :delete, 
+                    title: 'Eliminar los datos personales',
+                    'data-toggle' => 'tooltip','data-placement' => 'right',
+                    data: { confirm: 'Esta seguro que desea eliminar los datos personales' }  do %>
+                  <span class="fa fa-fw fa-trash-o"></span>
+                  <%end%>
+                </div>
+              </td>
+            </tr>
+            <%end%>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <%= will_paginate @datos_personals,  renderer: BootstrapPagination::Rails %>
+  </div>
+  <div class="col-lg-3"></div>
+</div>
+
+<%end%>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+  <%=link_to "Agregar Datos personales", new_datos_personal_path %>
+  
+  </div>
+</div>
+
+

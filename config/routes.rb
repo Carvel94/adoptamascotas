@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :tipo_servicios
   resources :datos_personals
+  resources :servicios
   
   root 'pages#home' #controlador pages, action home
 

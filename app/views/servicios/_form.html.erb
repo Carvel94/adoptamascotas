@@ -1,0 +1,21 @@
+<%= simple_form_for(@servicio) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+
+   <%= f.association :tipo_servicio, collection: TipoServicio.order(:nombre), prompt: "Escoge la categoría" %>
+ 
+<%= f.association :tipo_servicio, label_method: :nombre, value_method: :id, include_blank: true, placeholder: "Escoge la categoría" %>
+  </div>
+
+ 
+<%= f.association :tipo_servicio, :include_blank => false, :label_method => lambda { |tipo_servicio| "#{tipo_servicio.nombre} | #{tipo_servicio.descripcion}" } %>
+
+ <%= f.association :tipo_servicio, collection: @tipos, :include_blank => false %>
+ 
+<%#=f.association :tipo_servicio, :collection => tipo_servicio.where(:country_id => 1), :label_method => :name, :value_method => :id%>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
