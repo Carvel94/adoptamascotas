@@ -29,47 +29,47 @@ AnimalAdoptar.create(tipo: "g", raza: "Mestizo", genero: "m", descripcion: "lind
 
 key = AnimalAdoptar.last
 
-#AnimalAdoptarFoto.create(imagen: "adopta_gato01.jpg", animal_adoptar_id: key)
-#AnimalAdoptarFoto.create(imagen: "adopta_gato02.jpg", animal_adoptar_id: key)
-#AnimalAdoptarFoto.create(imagen: "adopta_gato03.jpg", animal_adoptar_id: key)
+AnimalAdoptarFoto.create(imagen: "adopta_gato01.jpg", animal_adoptar_id: key.id)
+AnimalAdoptarFoto.create(imagen: "adopta_gato02.jpg", animal_adoptar_id: key.id)
+AnimalAdoptarFoto.create(imagen: "adopta_gato03.jpg", animal_adoptar_id: key.id)
 
 #AnimalAdoptar.create(tipo: "g", raza: "mestizo - angora", genero: "f", descripcion: "lindo gatito con mucho de la raza angora, color atigrado, de mes y medio de edad, muy tranquilo", edad: "mes y medio", rescatado: "1")
 
 key = AnimalAdoptar.last
 
-#AnimalAdoptarFoto.create(imagen: "adopta_gato03.jpg", animal_adoptar_id: key)
-#AnimalAdoptarFoto.create(imagen: "adopta_gato04.jpg", animal_adoptar_id: key)
+AnimalAdoptarFoto.create(imagen: "adopta_gato03.jpg", animal_adoptar_id: key.id)
+AnimalAdoptarFoto.create(imagen: "adopta_gato04.jpg", animal_adoptar_id: key.id)
 
 
 AnimalAdoptar.create(tipo: "g", raza: "mestizo", genero: "f", descripcion: "lindo gatito, muy cariñoso y tranquilo, su color es negro de aproximadamente 1 año", edad: "1 año",  rescatado: "0")
 
 key = AnimalAdoptar.last
 
-#AnimalAdoptarFoto.create(imagen: "adopta_gato05.jpg", animal_adoptar_id: key)
-#AnimalAdoptarFoto.create(imagen: "adopta_gato06.jpg", animal_adoptar_id: key)
+AnimalAdoptarFoto.create(imagen: "adopta_gato05.jpg", animal_adoptar_id: key.id)
+AnimalAdoptarFoto.create(imagen: "adopta_gato06.jpg", animal_adoptar_id: key.id)
 
 #AnimalAdoptar.create(tipo: "p", raza: "Pastor aleman", genero: "m", descripcion: "Este perro fue abandonado y rescatado, extremadamente sociable, y al parecer fue entrenado", edad: "4 años",  rescatado: "1")
 
 key = AnimalAdoptar.last
 
-#AnimalAdoptarFoto.create(imagen: "adopta_perro01.jpg", animal_adoptar_id: key)
-#AnimalAdoptarFoto.create(imagen: "adopta_perro02.jpg", animal_adoptar_id: key)
-#AnimalAdoptarFoto.create(imagen: "adopta_perro03.jpg", animal_adoptar_id: key)
+AnimalAdoptarFoto.create(imagen: "adopta_perro01.jpg", animal_adoptar_id: key.id)
+AnimalAdoptarFoto.create(imagen: "adopta_perro02.jpg", animal_adoptar_id: key.id)
+AnimalAdoptarFoto.create(imagen: "adopta_perro03.jpg", animal_adoptar_id: key.id)
 
 AnimalAdoptar.create(tipo: "p", raza: "mestizo", genero: "f", descripcion: "lindo perro mestizo, fue abandonado y recuperado, muy tranquilo y sociable, jugueton con los niños, vacunado", edad: "2 años",  rescatado: "1")
 
 key = AnimalAdoptar.last
 
-#AnimalAdoptarFoto.create(imagen: "adopta_perro04.jpg", animal_adoptar_id: key)
-#AnimalAdoptarFoto.create(imagen: "adopta_perro05.jpg", animal_adoptar_id: key)
+AnimalAdoptarFoto.create(imagen: "adopta_perro04.jpg", animal_adoptar_id: key.id)
+AnimalAdoptarFoto.create(imagen: "adopta_perro05.jpg", animal_adoptar_id: key.id)
 
 
 AnimalAdoptar.create(tipo: "p", raza: "Pitbull", genero: "f", descripcion: "lindo pitbull, de color blanco, muy tranquilo, y educado, rescatado", edad: "1 año",  rescatado: "1")
 
 key = AnimalAdoptar.last
 
-#AnimalAdoptarFoto.create(imagen: "adopta_perro06.jpg", animal_adoptar_id: key)
-#AnimalAdoptarFoto.create(imagen: "adopta_prtto07.jpg", animal_adoptar_id: key)
+AnimalAdoptarFoto.create(imagen: "adopta_perro06.jpg", animal_adoptar_id: key.id)
+AnimalAdoptarFoto.create(imagen: "adopta_prtto07.jpg", animal_adoptar_id: key.id)
 
 puts "SE AGREGARON LOS REGISTROS INICIALES A la tabla: AnimalAdoptar"
 

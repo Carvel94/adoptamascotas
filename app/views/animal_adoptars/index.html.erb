@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<br/>
+<%if !@animal_adoptars.empty? %>
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Listado de animales en adopción</div>
+      <div class="table-responsive" style="height:260px" >
+        <table class="table table-striped table-hover table-bordered" >
+          <thead >
+            <tr >
+              <th>tipo</th>
+              <th>raza</th>
+              <th>genero</th>
+               <th>edad</th>
+              <th>descripción</th>
+             
+              <th style="text-align: center">Ver</th>
+              <th style="text-align: center">Editar</th>
+              <th style="text-align: center">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody style="overflow-y: scroll;height: auto; width:100%">
+          <% @animal_adoptars.each do |dato| %>
+           
+            <tr>
+              <td><%=dato.tipo%></td>
+              <td><%=dato.raza%></td>
+              <td><%=dato.genero%></td>
+              <td><%=dato.edad%></td>
+              <td><%=dato.descripcion%></td>
+              <td><%= link_to 'Show', animal_adoptar_path(dato) %></td>
+              <td>
+                <div align="center">
+                  <%=link_to edit_animal_adoptar_path(dato),
+                    title: 'Editar',
+                    'data-toggle' => 'tooltip','data-placement' => 'right' do %>
+                  <span class="fa fa-fw fa-pencil"></span>
+                  <%end%>
+                </div>
+              </td>
+              <td>
+
+                <div align="center">
+                  <%=link_to  animal_adoptar_path(dato), method: :delete, 
+                    title: 'Eliminar los datos personales',
+                    'data-toggle' => 'tooltip','data-placement' => 'right',
+                    data: { confirm: 'Esta seguro que desea eliminar los datos personales' }  do %>
+                  <span class="fa fa-fw fa-trash-o"></span>
+                  <%end%>
+                </div>
+              </td>
+            </tr>
+            <%end%>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <%= will_paginate @animal_adoptars,  renderer: BootstrapPagination::Rails %>
+  </div>
+  <div class="col-lg-3"></div>
+</div>
+
+<%end%>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+  <%=link_to "Agregar nueva adopción", new_animal_adoptar_path %>
+  
+  </div>
+</div>

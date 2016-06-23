@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  imagen: MyString
+  animal_adoptar_id: 
+
+two:
+  imagen: MyString
+  animal_adoptar_id: 

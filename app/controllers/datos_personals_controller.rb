@@ -18,7 +18,7 @@ class DatosPersonalsController < ApplicationController
     #puts params[:datos_personal][:nombre]
     #render :text => params[:datos_personal].inspect
     @datos_personal = DatosPersonal.new(datos_personal_params)
-
+    @ciudades = []
     respond_to do |format|
       if @datos_personal.save
         format.html { redirect_to @datos_personal, notice: 'Datos personales agregados exitosamente.' }
@@ -27,15 +27,17 @@ class DatosPersonalsController < ApplicationController
         format.html { render :new }
         format.json { render json: @datos_personal.errors, status: :unprocessable_entity }
       end
-    end
+  end
 #Inteligencia colectiva
 end
 
 def edit
   @datos_personals = DatosPersonal.find(params[:id])
+  @ciudades = []
 end
 
 def update
+  @ciudades = []
   respond_to do |format|
     if @datos_personal.update(datos_personal_params)
       format.html {redirect_to @datos_personal, notice: 'Sus datos se modificaron exitosamente'}
@@ -59,5 +61,9 @@ end
 
 def datos_personal_params
   params.require(:datos_personal).permit(:nombre, :apellido, :fecha_nacimiento, :sexo, :telefono, :celular, :direccion, :estado, :ciudad, :calificacion, :correo_alternativo)
+end
+
+def obtener_ciudades
+  @ciudades = DatosPersonal.estados_ciudades_venezolanos_hash[params[:estado_id]][:municipios].insert(0,DatosPersonal.estados_ciudades_venezolanos_hash[params[:estado_id]][:capital])
 end
 end

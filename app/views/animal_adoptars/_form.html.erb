@@ -1,0 +1,75 @@
+ <br />
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-6">
+
+<div class="panel panel-primary"> 
+<div class=panel-heading> <h3 class=panel-title>Agregar adopción</h3> </div>
+ <div class=panel-body> 
+
+<%= simple_form_for@animal_adoptar, html: { class: 'form-horizontal' },
+  wrapper: :horizontal_form do |f| %>
+  <%= f.error_notification %>
+
+    <% if @animal_adoptar.errors.any? %>
+    <div class="alert alert-danger">
+       <div class="error_explanation">
+          <ul>
+             <% @animal_adoptar.errors.each do |attr,msg| %>
+             <li><%= "#{msg}" if @animal_adoptar.errors[attr].first == msg %> </li>
+             <% end %>
+          </ul>
+       </div>
+    </div>
+    <% end %>
+
+
+  <div class="form-group">
+      <div class="col-lg-8">
+        <%= f.label :sexo %>
+        <%=f.collection_radio_buttons :tipo, [["Gato", 'Gato'] ,["Perro", 'Perro']], :first, :last %>
+      </div>  
+  </div>
+
+  <div class="form-group">
+   <label class="control-label col-lg-4" >*Raza</label>
+    <div class="col-lg-6">
+    <%= f.input :raza, label: false, placeholder: "Coloque la raza del animal", wrapper_html: { class: 'username' } %> 
+    </div>
+  </div>
+       
+ <div class="form-group">
+      <div class="col-lg-8">
+         <%= f.label :genero %>
+        <%=f.collection_radio_buttons :genero, [["Macho", 'Hembra'] ,["Macho", 'Hembra']], :first, :last %>
+      </div> 
+</div>
+ <div class="form-group">
+
+      <div class="col-lg-8">
+         <%= f.label :edad %>
+         <%= f.input :edad, label: false, placeholder: "Coloque la edad aproximada del animalito" %>
+      </div> 
+</div>
+ <div class="form-group">
+       <div class="col-lg-8">
+        <%= f.input :descripcion, as: :text, label: 'Breve descripción:', placeholder: "Coloque una breve descripción del animalito" %>
+       </div>
+  </div>
+
+  <h2> Fotos </h2>
+  <%= f.fields_for :animal_adoptar_fotos do |foto| %>
+      <div class="form-group">
+        <%=foto.label :imagen, class: "control-label col-lg-2"%>
+        <div class="col-lg-6">
+          <%=foto.text_field :imagen%>
+          <%=foto.check_box :_destroy%>
+          <%=foto.label "Eliminar"%>                               
+        </div>
+      </div>
+  <%end%>  
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

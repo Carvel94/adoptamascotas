@@ -1,0 +1,8 @@
+<%puts @ciudades%>
+$('.coleccion_ciudades').empty();
+
+$('.coleccion_ciudades').append( $('<option>Select la ciudad</option>'));
+
+<% @ciudades.each do |ciudad| %>
+  	$('#datos_personal_ciudad').append($('<option value="<%= ciudad%>"><%= ciudad %></option>'));
+<% end %>

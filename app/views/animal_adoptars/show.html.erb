@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @animal_adoptar.tipo %>
+</p>
+
+<p>
+  <strong>Raza:</strong>
+  <%= @animal_adoptar.raza %>
+</p>
+
+<p>
+  <strong>Genero:</strong>
+  <%= @animal_adoptar.genero %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @animal_adoptar.descripcion %>
+</p>
+
+<h2> Fotos </h2>
+<% if @animal_adoptar.animal_adoptar_fotos.any? %>
+  <ul>
+  <%@animal_adoptar.animal_adoptar_fotos.each do |foto|%>
+  <li><%=link_to foto, foto%></li>
+  <%end%>
+  </ul>  
+<%else%>
+<p> No existen fotos almacenadas</p>
+
+<%end%>
+
+<%= link_to 'Edit', edit_animal_adoptar_path(@animal_adoptar) %> |
+<%= link_to 'Back', animal_adoptars_path %>

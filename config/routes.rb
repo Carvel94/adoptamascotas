@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :tipo_servicios
   resources :datos_personals
   resources :servicios
+  resources :animal_adoptars
+  resources :animal_adoptar_fotos
+
+  get 'datos_personals/obtener_ciudades/:id' => 'datos_personals#obtener_ciudades'
   
   root 'pages#home' #controlador pages, action home
 
