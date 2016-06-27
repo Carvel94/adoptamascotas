@@ -1,0 +1,32 @@
+<div class="container">
+  
+  <div class="row" id="pwd-container">
+    <div class="col-md-4"></div>
+    
+    <div class="col-md-4">
+      <section class="login-form">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+          
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Habbo.gif" class="img-responsive" alt="" />
+          <br/>    
+
+            <%= f.input :login, required: false, autofocus: true, placeholder: "username ó email", class: "form-control input-lg" %>
+             <%= f.input :password, required: false, class: "form-control input-lg"%>
+             <%= f.input :remember_me, label: 'recordarme', as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Log in", class: "btn btn-lg btn-primary btn-block" %>
+          </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+
+      </section>  
+      </div>
+      <div class="col-md-4"></div>
+  </div>
+  
+</div>

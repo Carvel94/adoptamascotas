@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
+  devise_for :usuarios, controllers:{
+    sessions: 'usuarios/sessions',
+    registrations: 'usuarios/registrations'
+  }
   get 'pages/home'
 
   get 'pages/index'
+
+  get 'pages/home_admin' => 'pages#home_admin'
 
   resources :tipo_servicios
   resources :datos_personals

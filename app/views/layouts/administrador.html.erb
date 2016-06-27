@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Adoptamascota" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Adoptamascota" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  
+  <body>
+ 
+    <header>
+      <%= render 'shared/header_admin.html.erb' %>
+    </header>
+    
+    <main>
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+      <%#= render 'layouts/messages' %>
+      <%= yield %>
+    </main>
+
+    
+   <footer>
+    <%= render 'shared/footer.html.erb' %>
+   </footer> 
+
+  </body>
+
+</html>
